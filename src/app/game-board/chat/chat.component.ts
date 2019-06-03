@@ -25,6 +25,7 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
+    console.log(this.round);
     this.defineRound(this.round);
   }
 

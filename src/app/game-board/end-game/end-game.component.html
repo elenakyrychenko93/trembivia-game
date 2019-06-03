@@ -1,3 +1,18 @@
-<p>
-  end-game works!
-</p>
+<div class="end-game">
+  <div class="container">
+    <ul>
+      <li *ngFor="let user of users; let i = index">
+        <div class="user">
+          <h2>{{i+1}} place</h2>
+          <div class="avatar">
+            <img [src]="user.icon" alt="hero_icon">
+          </div>
+          <div class="points">
+            {{ user.gamePoints | number }}
+          </div>
+          <p class="name">{{user.name}}</p>
+        </div>
+      </li>
+    </ul>
+  </div>
+</div>

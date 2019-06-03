@@ -1,7 +1,7 @@
 .cash-out {
   display: flex;
 }
-.container>div {
+.container >div {
   padding: 10px 0;
   border-bottom: 1px solid  #0b0a0e30;
 }

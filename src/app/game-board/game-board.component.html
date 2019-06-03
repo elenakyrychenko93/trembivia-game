@@ -8,22 +8,31 @@
     </div>
 
     <div class="board-info" *ngIf="round >= 0 && round !== 6">
-      <div *ngIf="round || round == 0" class="host-block" [ngClass]="{'active': round > 0}">
+      <div *ngIf="round || round == 0" class="host-block" [ngClass]="{'small': round > 0, 'big': isHostTalking}">
         <app-host></app-host>
       </div>
-      <div *ngIf="round > 0" class="question-block">
+      <div *ngIf="round > 0 && !isHostTalking" class="question-block">
         <app-question [question]="question"></app-question>
+        <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="timer">
+          Round ends in: {{time}}s
+        </div>
       </div>
     </div>
 
-    <div *ngIf="round === 6" class="end-game">
-      end game screen
+    <div class="map" [ngClass]="{'inactive': round === 6 || round === 0 || round == undefined || isHostTalking == true}">
+      <div class="container">
+        <div id="map"></div>
+      </div>
     </div>
 
-<div class="chat" *ngIf="round >= 0 && round !== 6">
-  <app-chat [round]="round"></app-chat>
-</div>
+    <div class="chat" [ngClass]="{'inactive': round === 6 || round == undefined}">
+      <app-chat [round]="round"></app-chat>
+    </div>
 
   </div>
+</div>
+
+<div *ngIf="round === 6" class="end-game">
+  <app-end-game [humanPoints]="humanPoints"></app-end-game>
 </div>
 <app-footer></app-footer>

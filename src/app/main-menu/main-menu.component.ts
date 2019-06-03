@@ -7,12 +7,11 @@ import {Router} from '@angular/router';
   styleUrls: ['./main-menu.component.css']
 })
 export class MainMenuComponent implements OnInit {
-
   constructor(private router: Router) {
   }
 
   ngOnInit() {
-  }
+  };
 
   redirectGameBoard() {
     this.router.navigate(['/game-board']);

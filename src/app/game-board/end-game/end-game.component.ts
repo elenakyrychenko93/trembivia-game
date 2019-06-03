@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import {Component, Input, OnInit} from '@angular/core';
+import {RESULTS} from '../../users_questions';
 
 @Component({
   selector: 'app-end-game',
@@ -6,10 +7,17 @@ import { Component, OnInit } from '@angular/core';
   styleUrls: ['./end-game.component.css']
 })
 export class EndGameComponent implements OnInit {
+  users = RESULTS;
+  @Input() humanPoints;
 
-  constructor() { }
+  constructor() {
+  }
 
   ngOnInit() {
+    this.users[19].gamePoints = this.humanPoints;
+    this.users.sort(function (a, b) {
+      return a.gamePoints - b.gamePoints;
+    });
   }
 
 }
