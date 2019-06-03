@@ -15,6 +15,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
 
   answer: any;
   answerMarker = {};
+  prevAnswerMarker = {};
   correctMarker = {};
   map;
 
@@ -57,6 +58,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   hostStartTalk() {
     setTimeout(() => {
       this.calculateHumanPoints();
+      this.prevAnswerMarker = this.answerMarker;
       this.clearMarkers();
       this.isHostTalking = true;
       console.log('before', this.isHostTalking);
@@ -118,13 +120,16 @@ export class GameBoardComponent implements OnInit, OnDestroy {
     let a = Math.sin(dLat / 2) * Math.sin(dLat / 2) +
       Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
-    console.log(earthRadiusKm * c);
     return earthRadiusKm * c;
   };
 
   calculateHumanPoints() {
-    console.log(this.answerMarker._latlng);
-    let points = this.calculateDistance(this.answerMarker._latlng.lat, this.answerMarker._latlng.lng, this.answer.lat, this.answer.lon);
+    let points;
+    if (!this.answerMarker._latlng || this.prevAnswerMarker._latlng == this.answerMarker._latlng) {
+      points = 5000;
+    } else {
+      points = this.calculateDistance(this.answerMarker._latlng.lat, this.answerMarker._latlng.lng, this.answer.lat, this.answer.lon);
+    }
     this.humanPoints = this.humanPoints + points;
     console.log(this.humanPoints);
   };

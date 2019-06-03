@@ -28,7 +28,6 @@ const appRoutes: Routes =[
   { path: 'leaderboard', component: LeaderboardComponent},
   { path: 'profile', component: ProfileComponent},
   { path: 'shop', component: ShopComponent},
-  { path: 'chat', component: ChatComponent},
   { path: 'game-board', component: GameBoardComponent}
 ];
 
