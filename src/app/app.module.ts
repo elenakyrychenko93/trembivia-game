@@ -21,7 +21,7 @@ import { HostComponent } from './game-board/host/host.component';
 import { QuestionComponent } from './game-board/question/question.component';
 import { EndGameComponent } from './game-board/end-game/end-game.component';
 
-const appRoutes: Routes =[
+const appRoutes: Routes = [
   { path: '', component: LoginComponent},
   { path: 'login', component: LoginComponent},
   { path: 'main', component: MainMenuComponent},

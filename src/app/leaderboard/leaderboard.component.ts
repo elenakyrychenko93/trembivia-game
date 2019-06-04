@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LEADERS} from '../users_questions';
+import {LEADERS, RESULTS} from '../users_questions';
 
 @Component({
   selector: 'app-leaderboard',
@@ -9,7 +9,7 @@ import {LEADERS} from '../users_questions';
 })
 export class LeaderboardComponent implements OnInit {
   public balance: number = 0;
-  leaders = LEADERS;
+  leaders = RESULTS;
 
   constructor(private router: Router) {
   }

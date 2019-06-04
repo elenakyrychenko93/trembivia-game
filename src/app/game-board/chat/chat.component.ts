@@ -25,7 +25,6 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.round);
     this.defineRound(this.round);
   }
 
@@ -77,7 +76,6 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   addComment() {
-    console.log(this.comment.value);
     this.comments.push(
       {
         name: 'HUMAN',

@@ -48,115 +48,115 @@ export const RESULTS: Results[] = [
   {
     name: 'Bug-Man',
     gamePoints: 3200,
-    prize: 1000,
+    prize: 900,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Metal Man',
     gamePoints: 3700,
-    prize: 1000,
+    prize: 800,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Captain la’America',
     gamePoints: 3900,
-    prize: 1000,
+    prize: 700,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Jin Greye',
     gamePoints: 4200,
-    prize: 1000,
+    prize: 600,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Deadriver',
     gamePoints: 4300,
-    prize: 1000,
+    prize: 600,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Silver Swimmer',
     gamePoints: 4500,
-    prize: 1000,
+    prize: 600,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Queen’s Gambit',
     gamePoints: 4700,
-    prize: 1000,
+    prize: 500,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Cyclopsis',
     gamePoints: 4700,
-    prize: 1000,
+    prize: 500,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Sir. Fantasticus',
     gamePoints: 5100,
-    prize: 1000,
+    prize: 500,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Nightbrawler',
     gamePoints: 5200,
-    prize: 1000,
+    prize: 400,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Nightbrawler',
     gamePoints: 5400,
-    prize: 1000,
+    prize: 300,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Nick Fursona',
     gamePoints: 5500,
-    prize: 1000,
+    prize: 200,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Torch',
     gamePoints: 5700,
-    prize: 1000,
+    prize: 200,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Icebaby',
     gamePoints: 6100,
-    prize: 1000,
+    prize: 200,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Professor Y',
     gamePoints: 6300,
-    prize: 1000,
+    prize: 100,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Doctor Weird',
     gamePoints: 6600,
-    prize: 1000,
+    prize: 100,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Skarlet Bitanga',
     gamePoints: 7100,
-    prize: 1000,
+    prize: 100,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'Kitty Kat',
     gamePoints: 7200,
-    prize: 1000,
+    prize: 100,
     icon: '../../assets/img/spider-man.jpg'
   },
   {
     name: 'HUMAN',
     gamePoints: 0,
-    prize: 1000,
+    prize: 0,
     icon: '../../assets/img/avatar.png'
   },
 ];
