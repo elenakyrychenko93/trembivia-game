@@ -108,13 +108,12 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   initMap() {
     this.map = L.map('map', {
       center: [51.509, -0.08],
-      zoom: 1
+      zoom: 2
     });
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
       attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
     }).addTo(this.map);
-
 
     this.map.on('click', (e) => {
       let lat = e.latlng.lat;
@@ -203,7 +202,11 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   };
 
   applySectorBoost() {
-
+    var bounds = [[85.00, 179.68], [62.46, 19.10]];
+// create an orange rectangle
+    L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(this.map);
+// zoom the map to the rectangle bounds
+    this.map.fitBounds(bounds);
   };
 
 }
