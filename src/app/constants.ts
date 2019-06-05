@@ -3,12 +3,20 @@ interface Leader {
   prize: number;
   icon: string;
 }
+
 interface Results {
   name: string;
   gamePoints: number;
   prize?: number;
   icon: string;
 }
+
+const NORTHAMERICA = [{lat: 85.0, lng: -180.0}, {lat: 85.0, lng: 0.0}, {lat: 0.0, lng: 0.0}, {lat: 0.0, lng: -180.0}];
+const SOUTHAMERICA = [{lat: 0.0, lng: -180.0}, {lat: 0.0, lng: 0.0}, {lat: -85.0, lng: 0.0}, {lat: -85.0, lng: -180.0}];
+const EURASIA = [{lat: 85.0, lng: 0.0}, {lat: 0.0, lng: 0.0}, {lat: 0.0, lng: 180.0}, {lat: 85.0, lng: 180.0}];
+const AUSTRALIA = [{lat: 0.0, lng: 0.0}, {lat: 0.0, lng: 180.0}, {lat: -85.0, lng: 180.0}, {lat: -85.0, lng: 0.0}];
+export const MAPRECTANGLES = {NORTHAMERICA: NORTHAMERICA, SOUTHAMERICA: SOUTHAMERICA, EURASIA: EURASIA, AUSTRALIA: AUSTRALIA};
+
 export const QUESTIONS = [
   'round 1 question?',
   'round 2 question?',

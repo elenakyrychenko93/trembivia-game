@@ -1,6 +1,6 @@
 import {Component, OnInit} from '@angular/core';
 import {Router} from '@angular/router';
-import {LEADERS, RESULTS} from '../users_questions';
+import {RESULTS} from '../constants';
 
 @Component({
   selector: 'app-leaderboard',

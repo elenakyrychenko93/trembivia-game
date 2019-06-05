@@ -1,5 +1,5 @@
 import {Component, OnDestroy, OnInit} from '@angular/core';
-import {QUESTIONS} from '../users_questions';
+import {MAPRECTANGLES, QUESTIONS} from '../constants';
 import * as L from '../../assets/leaflet';
 import {GameService} from '../game.service';
 
@@ -9,6 +9,8 @@ import {GameService} from '../game.service';
   styleUrls: ['./game-board.component.css']
 })
 export class GameBoardComponent implements OnInit, OnDestroy {
+  roundsTimeout: any;
+
   rounds: any = [0, 1, 2, 3, 4, 5, 6];
   round: any;
   questions: any = QUESTIONS;
@@ -21,6 +23,9 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   correctMarker: any = {};
   map: any;
   polyline: any;
+  rectangle: any;
+  rectangleCheck: any;
+  mapRectangles = MAPRECTANGLES;
 
   time: number = 0;
   interval: number;
@@ -45,7 +50,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   ngOnInit() {
     this.startGame();
     this.initMap();
-    this.answer = {lat: 50.431782, lon: 30.516382};
+    this.answer = {lat: 37.786617, lon: -122.404654};
   }
 
   ngOnDestroy() {
@@ -56,12 +61,13 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   startGame() {
     setTimeout(() => {
       this.round = this.rounds[0];
-      setTimeout(() => this.startRounds(), 5000);
+      this.roundsTimeout = setTimeout(() => this.startRounds(), 5000);
     }, 5000);
   }
 
   startRounds() {
     if (this.round < 5) {
+      this.map.setView([0, 0], 3);
       this.startTimer(20);
       this.question = this.questions[this.round];
       this.round = ++this.round;
@@ -84,7 +90,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   hostStartTalk() {
     setTimeout(() => {
       this.clearMarkers();
-      this.clearPolyline();
+      this.clearMapMarks();
       this.isHostTalking = true;
       this.gameService.setIsHostTalking(this.isHostTalking);
       this.hostStopTalk();
@@ -102,17 +108,20 @@ export class GameBoardComponent implements OnInit, OnDestroy {
 
   endGame() {
     this.pauseTimer();
-    this.round = 6;
+    clearTimeout(this.roundsTimeout);
+    this.round = undefined;
+    this.gameService.setRound(this.round);
   }
 
   initMap() {
     this.map = L.map('map', {
-      center: [51.509, -0.08],
-      zoom: 2
+      center: [0, 0],
+      zoom: 3
     });
 
     L.tileLayer('http://{s}.tile.osm.org/{z}/{x}/{y}.png', {
-      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
+      attribution: '&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors',
+      noWrap: true
     }).addTo(this.map);
 
     this.map.on('click', (e) => {
@@ -120,10 +129,9 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       let lng = e.latlng.lng;
       console.log('You clicked the map at LAT: ' + lat + ' and LONG: ' + lng);
 
-      if (this.answerMarker != undefined) {
+      if (this.answerMarker !== undefined) {
         this.map.removeLayer(this.answerMarker);
-      };
-
+      }
       this.answerMarker = L.marker([lat, lng]).addTo(this.map);
     });
   }
@@ -131,7 +139,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   clearMarkers() {
     this.map.removeLayer(this.answerMarker);
     this.map.removeLayer(this.correctMarker);
-  };
+  }
 
   degreesToRadians(degrees) {
     return degrees * Math.PI / 180;
@@ -150,35 +158,26 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return earthRadiusKm * c;
-  };
+  }
 
   calculateHumanPoints() {
     this.correctMarker = L.marker([this.answer.lat, this.answer.lon]).addTo(this.map);
 
-    if (!this.answerMarker._latlng || this.prevAnswerMarker._latlng == this.answerMarker._latlng) {
+    if (!this.answerMarker._latlng || this.prevAnswerMarker._latlng === this.answerMarker._latlng) {
       this.currentPoints = 5000;
       // this.map.fitBounds([{lat: this.answer.lat, lng: this.answer.lon}], 5);
-      this.map.setView(new L.LatLng(this.answer.lat, this.answer.lon), 5);
+      this.map.setView(new L.LatLng(this.answer.lat, this.answer.lon), 4);
     } else {
-      this.currentPoints = this.calculateDistance(this.answerMarker._latlng.lat, this.answerMarker._latlng.lng, this.answer.lat, this.answer.lon);
+      this.currentPoints = this.calculateDistance(
+        this.answerMarker._latlng.lat,
+        this.answerMarker._latlng.lng,
+        this.answer.lat,
+        this.answer.lon
+      );
       this.addPolyline();
     }
-    this.humanPoints = this.humanPoints + this.currentPoints;
+    this.humanPoints = +(this.humanPoints + this.currentPoints).toFixed(0);
     console.log(this.humanPoints);
-  };
-
-  addPolyline() {
-    let latlngs = Array();
-    latlngs.push(this.answerMarker._latlng);
-    latlngs.push({lat: this.answer.lat, lng: this.answer.lon});
-    this.polyline = L.polyline(latlngs, {color: 'red'}).addTo(this.map);
-    this.map.fitBounds(this.polyline.getBounds());
-  }
-
-  clearPolyline() {
-    if (this.polyline) {
-      this.map.removeLayer(this.polyline);
-    }
   }
 
   startTimer(seconds) {
@@ -188,7 +187,6 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       if (this.time < 1) {
         clearInterval(this.interval);
       }
-      ;
     }, 1000);
   }
 
@@ -197,16 +195,39 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   }
 
   applyDistanceBoost() {
-    this.humanPoints = this.humanPoints - this.currentPoints / 2;
+    this.humanPoints = +(this.humanPoints - this.currentPoints / 2).toFixed(0);
     console.log(this.humanPoints);
-  };
+  }
 
   applySectorBoost() {
-    var bounds = [[85.00, 179.68], [62.46, 19.10]];
-// create an orange rectangle
-    L.rectangle(bounds, {color: "#ff7800", weight: 1}).addTo(this.map);
-// zoom the map to the rectangle bounds
+    for (let key in this.mapRectangles) {
+      let bounds = this.mapRectangles[key];
+      this.rectangleCheck = L.rectangle(bounds);
+
+      if (this.rectangleCheck.getBounds().contains(this.answer)) {
+        this.addRectangle(bounds);
+      }
+    }
+  }
+
+  addRectangle(bounds) {
+    this.rectangle = L.rectangle(bounds, {color: '#F8B003', weight: 1}).addTo(this.map);
     this.map.fitBounds(bounds);
-  };
+  }
+
+  addPolyline() {
+    let latlngs = Array();
+    latlngs.push(this.answerMarker._latlng);
+    latlngs.push({lat: this.answer.lat, lng: this.answer.lon});
+    this.polyline = L.polyline(latlngs, {color: 'red'}).addTo(this.map);
+    this.map.fitBounds(this.polyline.getBounds());
+  }
+
+  clearMapMarks() {
+    try {
+      this.map.removeLayer(this.polyline);
+      this.map.removeLayer(this.rectangle);
+    } catch (e) {}
+  }
 
 }

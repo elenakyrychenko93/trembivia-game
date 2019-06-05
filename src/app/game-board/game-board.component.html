@@ -13,6 +13,9 @@
       </div>
       <div *ngIf="round > 0 && !isHostTalking" class="question-block">
         <app-question [question]="question"></app-question>
+        <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="points">
+          Your points: {{humanPoints}}
+        </div>
         <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="timer">
           Round ends in: {{time}}s
         </div>

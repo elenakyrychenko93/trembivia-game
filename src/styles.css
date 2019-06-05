@@ -3,7 +3,6 @@
 
 * {
   -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
   margin: 0;
   padding: 0;
@@ -15,7 +14,9 @@
   margin: auto;
   max-width: 100%;
 }
-
+.leaflet-container {
+  background: rgba(11, 10, 14, 0.83);
+}
 h2 {
   font-size: 25px;
   font-weight: 400;
@@ -25,7 +26,7 @@ h2 {
 button {
   font-size: 16px;
   width: 150px;
-  padding: 10px 0px;
+  padding: 10px 0;
   text-align: center;
   background: #F8B003;
   border: none;
@@ -41,5 +42,4 @@ img.avatar {
   width: 30px;
   vertical-align: baseline;
 }
-
 
