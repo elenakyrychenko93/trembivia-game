@@ -2,16 +2,17 @@
   <div class="container">
     <div class="avatar">
       <a routerLink="/profile"><img class="avatar" src="../../assets/img/avatar.png" alt="logo">
-      <span>{{name}}</span></a>
+        <span>{{name}}</span></a>
       <router-outlet></router-outlet>
     </div>
 
     <div class="boosts">
-      <button class="half-length">
-        1/2
-        <span class="tooltiptext">Divide your last result by 2</span>
+      <button class="half-length" (click)="onDistanceBoost()" [disabled]="!isHostTalking || distanceBoost">
+      1/2
+      <span class="tooltiptext">Divide your last result by 2</span>
       </button>
-      <button class="correct-sector">
+      <button class="correct-sector" type="button" (click)="onSectorBoost()"
+              [disabled]="isHostTalking || sectorBoost || round === 0 || round === 6 || round === null || !round">
         Sector
         <span class="tooltiptext">Show a correct sector of the map</span>
       </button>

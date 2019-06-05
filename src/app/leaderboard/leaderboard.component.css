@@ -1,7 +1,7 @@
 .leaders {
   text-align: left;
   width: 100%;
-  margin: 20px auto;
+  margin: 20px auto 75px;
   text-transform: uppercase;
 }
 .user-info {
@@ -14,6 +14,7 @@
   -webkit-box-align: center;
   -ms-flex-align: center;
   align-items: center;
+  margin-top: 20px;
 }
 .balance {
   font-size: 16px;

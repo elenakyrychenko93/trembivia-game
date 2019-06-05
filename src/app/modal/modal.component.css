@@ -1,5 +1,7 @@
 .modal-body, .modal-footer {
   text-align: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
   justify-content: center;
 }
 p {
@@ -13,5 +15,6 @@ p {
   padding: 0;
 }
 .btn.focus, .btn:focus {
+  -webkit-box-shadow: none;
   box-shadow: none;
 }

@@ -1,6 +1,6 @@
-import {ChangeDetectionStrategy, Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, Input, OnChanges, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5} from '../../users_questions';
+import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5} from '../../constants';
 
 @Component({
   selector: 'app-chat',
@@ -25,7 +25,6 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   ngOnChanges() {
-    console.log(this.round);
     this.defineRound(this.round);
   }
 
@@ -77,7 +76,6 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   addComment() {
-    console.log(this.comment.value);
     this.comments.push(
       {
         name: 'HUMAN',

@@ -1,4 +1,6 @@
 .cash-out {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
 }
 .container >div {
@@ -6,7 +8,11 @@
   border-bottom: 1px solid  #0b0a0e30;
 }
 .cash-out, .balance {
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
 }
 .balanceSumm {
@@ -21,4 +27,3 @@
 .cash-out .actions button{
   margin-left: 20px;
 }
-

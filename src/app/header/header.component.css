@@ -1,11 +1,13 @@
 header {
   background: rgba(11, 10, 14, 0.83);
 }
+
 a {
   text-decoration: none;
   color: white;
 }
-.container  {
+
+.container {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -17,6 +19,7 @@ a {
   align-items: center;
   color: white;
   padding: 20px;
+  -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
 
@@ -56,6 +59,45 @@ a {
   -o-transition: 0.3s;
   transition: 0.3s;
   outline: none;
+  /*box-shadow: 1px 1px 44px 8px #d5960f;*/
+  -webkit-box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  -webkit-animation: pulse 2s infinite;
+  animation: pulse 2s infinite;
+}
+
+@-webkit-keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+@keyframes pulse {
+  0% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
+  }
+  70% {
+    -webkit-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.1);
+    box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.1);
+  }
+  100% {
+    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+  }
+}
+
+.boosts > button:disabled {
+  -webkit-box-shadow: none;
+  box-shadow: none;
+  -webkit-animation: none;
+  animation: none;
 }
 
 .tooltiptext {
