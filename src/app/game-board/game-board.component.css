@@ -1,5 +1,5 @@
 .host-block.small {
-  width: 350px;
+  width: 315px;
 }
 
 .host-block.big {
@@ -16,7 +16,7 @@
   vertical-align: top;
   text-align: center;
   position: relative;
-  min-height: 175px;
+  min-height: 155px;
   margin: 20px 0;
 }
 
