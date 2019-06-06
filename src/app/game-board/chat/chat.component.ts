@@ -1,4 +1,4 @@
-import {Component, Input, OnChanges, OnInit} from '@angular/core';
+import {Component, ElementRef, Input, OnChanges, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
 import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5} from '../../constants';
 
@@ -11,6 +11,7 @@ import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5} from '../../c
 export class ChatComponent implements OnInit, OnChanges {
   @Input() isChatActive: string;
   @Input() round: number;
+
   comment = new FormControl('');
   comments = [];
   bots = BOTS;
@@ -21,7 +22,7 @@ export class ChatComponent implements OnInit, OnChanges {
   round4: any = ROUND4;
   round5: any = ROUND5;
 
-  constructor() {
+  constructor(private _elementRef: ElementRef) {
   }
 
   ngOnChanges() {
@@ -68,7 +69,8 @@ export class ChatComponent implements OnInit, OnChanges {
             text: roundPhrases[i],
             date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
           });
-      }, 1200 * i);
+        this._elementRef.nativeElement.querySelector('ul').lastChild.scrollIntoView({block: "center", behavior: "smooth"});
+      }, 1400 * i);
     };
     for (let i = 0; i < roundPhrases.length; i++) {
       iteration(i);
@@ -83,12 +85,4 @@ export class ChatComponent implements OnInit, OnChanges {
         date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
       });
   }
-
-  // startChatting(roundPhrases) {
-  //   for (let i = 0; i < roundPhrases.length; i++) {
-  //     this.comments.push({name:  this.bots[i], text: roundPhrases[i], date: new Date()});
-  //     console.log( this.bots[i], roundPhrases[i]);
-  //   }
-  // }
-
 }
