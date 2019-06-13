@@ -10,6 +10,7 @@ export class HeaderComponent implements OnInit {
   public name: string = 'HUMAN';
   isHostTalking: any = false;
   round;
+  isRoundRun: boolean = false;
   sectorBoost: boolean = false;
   distanceBoost: boolean = false;
 
@@ -20,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
     this.gameService.getRound().subscribe(value => {
       this.round = value;
+    });
+
+    this.gameService.getIsRoundRun().subscribe(value => {
+      this.isRoundRun = value;
     });
   }
 

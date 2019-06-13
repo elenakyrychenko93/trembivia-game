@@ -9,6 +9,7 @@ export class GameService {
   public isHostTalking = new BehaviorSubject(false);
   public sectorBoost = new BehaviorSubject(false);
   public distanceBoost = new BehaviorSubject(false);
+  public isRoundRun = new BehaviorSubject(false);
 
   constructor() {
   }
@@ -20,6 +21,15 @@ export class GameService {
   setRound(round) {
     this.round.next(round);
   }
+
+  getIsRoundRun(): Observable<boolean> {
+    return this.isRoundRun.asObservable();
+  }
+
+  setIsRoundRun(round) {
+    this.isRoundRun.next(round);
+  }
+
 
   getIsHostTalking(): Observable<boolean> {
     return this.isHostTalking.asObservable();

@@ -10,12 +10,12 @@ import {GameService} from '../game.service';
 })
 export class GameBoardComponent implements OnInit, OnDestroy {
   roundsTimeout: any;
-
   rounds: any = [0, 1, 2, 3, 4, 5, 6];
   round: any;
   questions: any = QUESTIONS;
   question: string;
   isHostTalking: boolean;
+  isRoundRun: boolean = false;
 
   answer: any;
   answerMarker: any = {};
@@ -69,6 +69,8 @@ export class GameBoardComponent implements OnInit, OnDestroy {
     if (this.round < 5) {
       this.map.setView([0, 0], 3);
       this.startTimer(20);
+      this.isRoundRun = true;
+      this.gameService.setIsRoundRun(this.isRoundRun);
       this.question = this.questions[this.round];
       this.round = ++this.round;
       this.gameService.setRound(this.round);
@@ -125,14 +127,16 @@ export class GameBoardComponent implements OnInit, OnDestroy {
     }).addTo(this.map);
 
     this.map.on('click', (e) => {
-      let lat = e.latlng.lat;
-      let lng = e.latlng.lng;
-      console.log('You clicked the map at LAT: ' + lat + ' and LONG: ' + lng);
+      if (this.isRoundRun) {
+        let lat = e.latlng.lat;
+        let lng = e.latlng.lng;
+        console.log('You clicked the map at LAT: ' + lat + ' and LONG: ' + lng);
 
-      if (this.answerMarker !== undefined) {
-        this.map.removeLayer(this.answerMarker);
+        if (this.answerMarker !== undefined) {
+          this.map.removeLayer(this.answerMarker);
+        }
+        this.answerMarker = L.marker([lat, lng]).addTo(this.map);
       }
-      this.answerMarker = L.marker([lat, lng]).addTo(this.map);
     });
   }
 
@@ -158,7 +162,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       Math.sin(dLon / 2) * Math.sin(dLon / 2) * Math.cos(lat1) * Math.cos(lat2);
     let c = 2 * Math.atan2(Math.sqrt(a), Math.sqrt(1 - a));
     return earthRadiusKm * c;
-  }
+  };
 
   calculateHumanPoints() {
     this.correctMarker = L.marker([this.answer.lat, this.answer.lon]).addTo(this.map);
@@ -185,6 +189,8 @@ export class GameBoardComponent implements OnInit, OnDestroy {
     this.interval = setInterval(() => {
       this.time--;
       if (this.time < 1) {
+        this.isRoundRun = false;
+        this.gameService.setIsRoundRun(this.isRoundRun);
         clearInterval(this.interval);
       }
     }, 1000);
@@ -229,5 +235,4 @@ export class GameBoardComponent implements OnInit, OnDestroy {
       this.map.removeLayer(this.rectangle);
     } catch (e) {}
   }
-
 }

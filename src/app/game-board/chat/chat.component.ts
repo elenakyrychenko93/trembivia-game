@@ -77,12 +77,19 @@ export class ChatComponent implements OnInit, OnChanges {
     }
   }
 
-  addComment() {
+  addComment(event) {
     this.comments.push(
       {
         name: 'HUMAN',
         text: this.comment.value,
         date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
       });
+    event.target.value = '';
+  }
+
+  onEnter(event) {
+    if (event.keyCode == 13) {
+        this.addComment(event);
+    }
   }
 }

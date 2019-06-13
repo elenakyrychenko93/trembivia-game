@@ -9,11 +9,6 @@
   outline: none;
 }
 
-.container {
-  width: 1170px;
-  margin: auto;
-  max-width: 100%;
-}
 .leaflet-container {
   background: rgba(11, 10, 14, 0.83);
 }
@@ -43,3 +38,10 @@ img.avatar {
   vertical-align: baseline;
 }
 
+div.container::before, div.container::after {
+  display: none;
+}
+div.container {
+  max-width: 100%;
+  margin: auto;
+}

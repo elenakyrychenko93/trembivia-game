@@ -15,12 +15,12 @@
         </div>
       </li>
     </ul>
-    <form novalidate class="form-inline">
+    <form novalidate class="form-inline" name="commentForm">
       <div class="form-group">
-        <input class="form-control" [formControl]="comment" type="text" placeholder="Your comments" />
+        <input class="form-control" [formControl]="comment" type="text" placeholder="Your comments" (keydown)="onEnter($event)" />
       </div>
       <div class="form-group">
-        <button class="btn btn-default" type="button" (click)="addComment()" [disabled]="round == undefined">Comment</button>
+        <button class="btn btn-default" type="button" (click)="addComment($event)" [disabled]="round == undefined">Comment</button>
       </div>
     </form>
   </div>

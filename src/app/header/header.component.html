@@ -12,7 +12,7 @@
       <span class="tooltiptext">Divide your last result by 2</span>
       </button>
       <button class="correct-sector" type="button" (click)="onSectorBoost()"
-              [disabled]="isHostTalking || sectorBoost || round === 0 || round === 6 || round === null || !round">
+              [disabled]="isHostTalking || sectorBoost || round === 0 || round === 6 || round === null || !round || !isRoundRun">
         Sector
         <span class="tooltiptext">Show a correct sector of the map</span>
       </button>
