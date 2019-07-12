@@ -1,15 +1,17 @@
 footer {
-  font-size: 25px;
-  text-align: right;
+  text-align: center;
   position: fixed;
   bottom: 0;
   right: 0;
-  padding: 20px;
+  padding: 12px;
   background: white;
   width: 100%;
+  font-family: Avenir;
+  font-size: 14px;
+  line-height: 23px;
 }
 
-span {
-  font-weight: bold;
-  color: #F8B003;
-}
+/*span {*/
+  /*font-weight: bold;*/
+  /*color: #F8B003;*/
+/*}*/

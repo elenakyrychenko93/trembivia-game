@@ -19,14 +19,16 @@ h2 {
 }
 
 button {
-  font-size: 16px;
-  width: 150px;
-  padding: 10px 0;
-  text-align: center;
-  background: #F8B003;
-  border: none;
+  transition: .3s;
   cursor: pointer;
-  margin: 10px 0;
+  /*font-size: 16px;*/
+  /*width: 150px;*/
+  /*padding: 10px 0;*/
+  /*text-align: center;*/
+  /*background: #F8B003;*/
+  /*border: none;*/
+  /*cursor: pointer;*/
+  /*margin: 10px 0;*/
 }
 
 img.logo {

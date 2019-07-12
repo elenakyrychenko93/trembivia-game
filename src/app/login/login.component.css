@@ -15,12 +15,53 @@
 .greeting {
   text-align: center;
   padding: 20px;
+  background: #E0E0E0;
+  height: 80vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  /*justify-content: center;*/
+}
+.logoT {
+  margin: 70px 0;
+  /*color: #4F4F4F;*/
+  /*display: inline-block;*/
+}
+h1 {
+  color: #4F4F4F;
+  display: inline-block;
 }
 
 h2 {
-  font-size: 35px;
+  margin: 24px 0;
+  font-family: SF Pro Text;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+  color: #000000;
+}
+p {
+  max-width: 450px;
+  font-family: SF Pro Text;
+  font-size: 16px;
+  line-height: 19px;
+  letter-spacing: 0.01em;
+  color: #4F4F4F;
 }
 
-p {
-  font-size: 25px;
+button {
+  background: #4F4F4F;
+  border-radius: 24px;
+  font-family: SF Pro Display;
+  font-size: 24px;
+  line-height: 28px;
+  text-align: center;
+  color: #FFFFFF;
+  padding: 14px 90px;
+  border: none;
+  margin-top: 40px;
+}
+button:hover {
+  background: #F8B003;
+  color: #000000;
 }

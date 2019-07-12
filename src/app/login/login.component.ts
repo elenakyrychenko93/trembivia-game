@@ -7,7 +7,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./login.component.css']
 })
 export class LoginComponent implements OnInit {
-  public name: string = 'HUMAN';
+  public name: string = 'Human';
 
   constructor(private router: Router) {
   }
