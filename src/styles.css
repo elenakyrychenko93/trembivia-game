@@ -9,9 +9,6 @@
   outline: none;
 }
 
-.leaflet-container {
-  background: rgba(11, 10, 14, 0.83);
-}
 h2 {
   font-size: 25px;
   font-weight: 400;
@@ -43,7 +40,17 @@ img.avatar {
 div.container::before, div.container::after {
   display: none;
 }
+
 div.container {
   max-width: 100%;
   margin: auto;
+}
+
+div.trembivia-container {
+  padding-left: 0;
+  padding-right: 0;
+}
+
+.leaflet-container {
+  background: rgba(11, 10, 14, 0.83);
 }
