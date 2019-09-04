@@ -16,15 +16,21 @@ export class ShopComponent implements OnInit {
   ngOnInit() {
   }
 
-  redirectMainMenu() {
-    this.router.navigate(['/main']);
-  }
-  redirectProfile() {
-    this.router.navigate(['/profile']);
-  }
   callAlert() {
     const modalRef = this._modalService.open(ModalComponent);
     modalRef.componentInstance.message = 'Add payment system first!';
+  }
+
+  redirectGameBoard() {
+    this.router.navigate(['/game-board']);
+  }
+
+  redirectLeaderboard() {
+    this.router.navigate(['/leaderboard']);
+  }
+
+  redirectShop() {
+    this.router.navigate(['/shop']);
   }
 
 }

@@ -9,11 +9,23 @@ p {
 }
 .modal-body {
   padding: 40px 20px;
+  color: #4f4f4f;
 }
 
 .modal-footer {
   padding: 0;
 }
+
+.btn {
+  background: #ffdc5d;
+  font-weight: bold;
+  color: #4f4f4f;
+  margin: 20px;
+  width: 200px;
+  text-align: center;
+  text-transform: uppercase;
+}
+
 .btn.focus, .btn:focus {
   -webkit-box-shadow: none;
   box-shadow: none;

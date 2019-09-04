@@ -1,5 +1,9 @@
-.main-menu {
+.trembivia-container {
   padding: 20px;
+}
+
+.main-menu {
+  margin: 0 25px;
 }
 
 .actions {
@@ -10,8 +14,57 @@ h2 {
   text-align: center;
 }
 
-button {
-  display: block;
-  margin: 10px auto;
+h3 {
+  font-family: SF Pro Text;
+  font-size: 24px;
+  line-height: 34px;
+  letter-spacing: 0.01em;
+  color: #000000;
+  text-align: left;
+  font-weight: bold;
 }
+
+h5 {
+  font-family: SF Pro Text;
+  font-size: 21px;
+  line-height: 29px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+  text-align: left;
+  font-weight: bold;
+}
+
+button p {
+  font-family: SF Pro Text;
+  font-size: 16px;
+  line-height:22px;
+  letter-spacing: 0.01em;
+  color: #FFFFFF;
+}
+
+button {
+  border: none;
+  margin: 15px auto;
+  padding: 25px;
+  box-sizing: border-box;
+  max-width: 620px;
+  border-radius: 24px;
+}
+
 #map { height: 380px; }
+
+.pic {
+  margin-right: 40px;
+}
+
+.join  {
+  background: linear-gradient(114.76deg, #5F6BE3 0%, #73BDEB 100%);
+}
+
+.leaderboard {
+  background: linear-gradient(295.14deg, #FFE35A 0%, #FFB064 98.4%);
+}
+
+.shop {
+  background: linear-gradient(294.76deg, #F387BB 0%, #A26FED 100%);
+}

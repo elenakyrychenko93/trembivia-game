@@ -20,6 +20,7 @@ import { PreGameComponent } from './game-board/pre-game/pre-game.component';
 import { HostComponent } from './game-board/host/host.component';
 import { QuestionComponent } from './game-board/question/question.component';
 import { EndGameComponent } from './game-board/end-game/end-game.component';
+import { ProfileCardComponent } from './profile-card/profile-card.component';
 
 const appRoutes: Routes = [
   { path: '', component: LoginComponent},
@@ -47,7 +48,8 @@ const appRoutes: Routes = [
     PreGameComponent,
     HostComponent,
     QuestionComponent,
-    EndGameComponent
+    EndGameComponent,
+    ProfileCardComponent
   ],
   imports: [
     BrowserModule,

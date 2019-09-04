@@ -9,10 +9,18 @@
   outline: none;
 }
 
+body {
+  background: #f3f1f1!important;
+}
+
 h2 {
   font-size: 25px;
   font-weight: 400;
   margin: 10px 0;
+}
+
+.flex {
+  display: flex;
 }
 
 button {
@@ -47,8 +55,7 @@ div.container {
 }
 
 div.trembivia-container {
-  padding-left: 0;
-  padding-right: 0;
+  padding: 20px;
 }
 
 .leaflet-container {

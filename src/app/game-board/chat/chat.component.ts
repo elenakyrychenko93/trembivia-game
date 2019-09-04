@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnChanges, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5} from '../../constants';
+import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5, COUNTROUND} from '../../constants';
 
 @Component({
   selector: 'app-chat',
@@ -15,6 +15,7 @@ export class ChatComponent implements OnInit, OnChanges {
   comment = new FormControl('');
   comments = [];
   bots = BOTS;
+  countRound = COUNTROUND;
   beforeRound = BEFOREROUND;
   round1 = ROUND1;
   round2: any = ROUND2;
@@ -35,6 +36,9 @@ export class ChatComponent implements OnInit, OnChanges {
 
   defineRound(round) {
     switch (round) {
+      case -1:
+        this.startChatting(this.countRound);
+        break;
       case 0:
         this.startChatting(this.beforeRound);
         break;
@@ -69,7 +73,7 @@ export class ChatComponent implements OnInit, OnChanges {
             text: roundPhrases[i],
             date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
           });
-        this._elementRef.nativeElement.querySelector('ul').lastChild.scrollIntoView({block: "center", behavior: "smooth"});
+        setTimeout(() => this._elementRef.nativeElement.querySelector('ul').lastChild.scrollIntoView({block: "center", behavior: "smooth"}), 10);
       }, 1400 * i);
     };
     for (let i = 0; i < roundPhrases.length; i++) {

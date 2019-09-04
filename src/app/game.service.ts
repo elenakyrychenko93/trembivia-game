@@ -19,6 +19,7 @@ export class GameService {
   }
 
   setRound(round) {
+    console.log('round', round);
     this.round.next(round);
   }
 

@@ -1,5 +1,5 @@
 header {
-  background: rgba(11, 10, 14, 0.83);
+  background: #E0E0E0;
 }
 
 a {
@@ -27,8 +27,8 @@ a {
   vertical-align: middle;
 }
 
-.avatar span {
-  padding: 10px;
+.logo {
+  cursor: pointer;
 }
 
 .boosts {
@@ -44,17 +44,17 @@ a {
 }
 
 .boosts > button {
-  border: 2px solid #F8B003;
+  border: 2px solid #2F80ED;
   border-radius: 50%;
-  width: 70px;
-  height: 70px;
+  width: 40px;
+  height: 40px;
   text-align: center;
+  background: transparent;
   /*padding: 25px 0;*/
   margin: 0 10px;
   cursor: pointer;
   position: relative;
-  background: transparent;
-  color: white;
+  /*color: white;*/
   -webkit-transition: 0.3s;
   -o-transition: 0.3s;
   transition: 0.3s;
@@ -64,6 +64,46 @@ a {
   box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
   -webkit-animation: pulse 2s infinite;
   animation: pulse 2s infinite;
+}
+
+.half-length {
+  font-family: Baloo;
+  font-style: normal;
+  font-size: 22px;
+  align-items: center;
+  letter-spacing: 0.01em;
+  color: #2F80ED;
+  font-weight: bold;
+  background: transparent;
+}
+
+.correct-sector.active {
+  background: #2F80ED;
+}
+
+.bonus-name {
+  max-width: 150px;
+  color: #2F80ED;
+  font-weight: bold;
+}
+
+.boosts svg {
+  vertical-align: middle;
+  transition: .3s;
+}
+
+.boosts svg path{
+  fill: #2F80ED;
+  /*background: #2F80ED;*/
+}
+
+.boosts > button:hover {
+  background: #2F80ED;
+  color: white;
+}
+
+.boosts > button:hover svg path{
+  fill: white;
 }
 
 @-webkit-keyframes pulse {
@@ -111,34 +151,38 @@ a {
   padding: 10px;
   position: absolute;
   z-index: 1;
-  bottom: 50%;
-  left: 180%;
+  bottom: -9px;
+  left: 110px;
   margin-left: -60px;
   opacity: 0;
   -webkit-transition: opacity 0.3s;
   -o-transition: opacity 0.3s;
   transition: opacity 0.3s;
+  font-weight: normal;
 }
 
 .tooltiptext::after {
   content: "";
   position: absolute;
-  top: 97%;
-  left: 6px;
-  margin-left: -5px;
-  border-width: 5px;
-  border-style: solid;
-  border-color: #555 transparent transparent transparent;
+  top: 15%;
+  left: -10px;
+  border-right: solid 25px rgb(85, 85, 85);
+  border-bottom: solid 20px transparent;
+  border-top: solid 20px transparent;
 }
 
-.boosts > button:hover {
-  background: #F8B003;
-  color: black;
-}
+/*.boosts > button:hover {*/
+  /*background: #F8B003;*/
+  /*color: black;*/
+/*}*/
 
 .boosts > button:disabled:hover {
   background: transparent;
-  color: white;
+  color: #2F80ED;
+}
+
+.boosts > button:disabled:hover svg path{
+  fill: #2F80ED;
 }
 
 .boosts > button:hover .tooltiptext {

@@ -8,7 +8,6 @@ import {RESULTS} from '../constants';
   styleUrls: ['./leaderboard.component.css']
 })
 export class LeaderboardComponent implements OnInit {
-  public balance: number = 0;
   leaders = RESULTS;
 
   constructor(private router: Router) {
@@ -17,8 +16,16 @@ export class LeaderboardComponent implements OnInit {
   ngOnInit() {
   }
 
-  redirectMainMenu() {
-    this.router.navigate(['/main']);
+  redirectGameBoard() {
+    this.router.navigate(['/game-board']);
+  }
+
+  redirectLeaderboard() {
+    this.router.navigate(['/leaderboard']);
+  }
+
+  redirectShop() {
+    this.router.navigate(['/shop']);
   }
 
 }

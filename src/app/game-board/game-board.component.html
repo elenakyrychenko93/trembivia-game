@@ -1,6 +1,6 @@
 <app-header></app-header>
 
-<div class="container">
+<div class="flex">
   <div class="game-board">
 
     <div *ngIf="!round && round != 0 && round !== 6" class="pre-game">
@@ -23,19 +23,28 @@
     </div>
 
     <div class="map" [ngClass]="{'inactive': round === 6 || round === 0 || round == undefined || isHostTalking == true}">
-      <div class="container">
+      <div class="trembivia-container">
         <div id="map"></div>
       </div>
     </div>
 
-    <div class="chat" [ngClass]="{'inactive': round === 6 || round == undefined}">
-      <app-chat [round]="round"></app-chat>
-    </div>
 
+
+  </div>
+
+  <div class="chat">
+    <app-chat [round]="round"></app-chat>
+  </div>
+
+  <!--<div class="chat" [ngClass]="{'inactive': round === 6 || round == undefined}">-->
+    <!--<app-chat [round]="round"></app-chat>-->
+  <!--</div>-->
+
+  <div *ngIf="round === 6" class="end-game">
+    <app-end-game [humanPoints]="humanPoints"></app-end-game>
   </div>
 </div>
 
-<div *ngIf="round === 6" class="end-game">
-  <app-end-game [humanPoints]="humanPoints"></app-end-game>
-</div>
-<app-footer></app-footer>
+
+
+<!--<app-footer></app-footer>-->

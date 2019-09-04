@@ -4,26 +4,108 @@
   margin: 20px auto 75px;
   text-transform: uppercase;
 }
-.user-info {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-pack: justify;
-  -ms-flex-pack: justify;
-  justify-content: space-between;
-  -webkit-box-align: center;
-  -ms-flex-align: center;
-  align-items: center;
-  margin-top: 20px;
+
+h5 {
+  font-size: 18px;
+  font-weight: bold;
+  color: #4F4F4F;
+  font-family: SF Pro Text;
 }
+
+h4 {
+  font-weight: bold;
+  font-size: 21px;
+}
+
+.table-container {
+  height: calc(100vh - 118px);
+  overflow-y: auto;
+  width: 100%;
+  padding-left: 20px;
+  max-width: 900px;
+  position: relative;
+}
+
+.table-container:after {
+  content: "";
+  display: block;
+  height: 77px;
+  position: fixed;
+  width: 100%;
+  bottom: -12px;
+  background: -o-linear-gradient(top, rgba(255,255,255,0) -45%,rgba(247,246,246,1) 12%,rgba(243,241,241,1) 100%);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(-45%, rgba(255,255,255,0)),color-stop(12%, rgba(247,246,246,1)),to(rgba(243,241,241,1)));
+  background: linear-gradient(to bottom, rgba(255,255,255,0) -45%,rgba(247,246,246,1) 12%,rgba(243,241,241,1) 100%);
+  -webkit-filter: blur(4px);
+  filter: blur(11px);
+}
+
 .balance {
-  font-size: 16px;
-  font-weight: 700;
-  text-transform: uppercase;
+  font-family: SF Pro Display;
+  font-size: 18px;
+  line-height: 25px;
+  text-align: right;
+  letter-spacing: 0.01em;
+  color: #F2994A;
+  font-weight: bold;
 }
-.avatar {
-  width: 30px;
+
+.best {
+  color: #F2994A;
+  position: relative;
+}
+
+.circle.best {
+  background: white;
+  color: #F2994A;
+}
+
+.circle.best:after {
+  content: "";
+  display: block;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  border: 5px solid #F2994A;
+  border-radius: 50%;
+  -webkit-transform: translate(-2px, -27px);
+  -ms-transform: translate(-5px, -30px);
+  transform: translate(-5px, -30px);
+}
+
+.circle {
+  position: relative;
+  background: #4F4F4F;
+  color: white;
+  font-size: 16px;
+  font-family: Baloo;
+  text-align: center;
+  width: 35px;
+  height: 34px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.circle:after {
+  content: "";
+  display: block;
   height: 30px;
+  width: 30px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  -webkit-transform: translate(-2px, -27px);
+  -ms-transform: translate(-2px, -27px);
+  transform: translate(-2px, -27px);
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
+.avatar {
+  width: 37px;
+  height: 37px;
   border-radius: 50%;
   overflow: hidden;
   display: inline-block;
@@ -36,4 +118,56 @@ img {
   max-width: 100%;
   width: 100%;
   height: 100%;
+}
+
+.actions {
+  margin-top: 40px;
+}
+
+.actions button {
+  border: none;
+  background: #E0E0E0;
+  border-radius: 18px;
+  width: 400px;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  margin-bottom: 15px;
+  padding: 7px 0;
+}
+
+.actions button svg {
+  height: 32px;
+}
+
+.actions button h5 {
+  font-weight: bold;
+  margin-top: 5px;
+}
+
+.actions button svg path{
+  fill: #000000;
+}
+
+.actions button.active h5{
+  color: white;
+}
+
+.actions button.active svg path{
+  fill: white;
+}
+
+.actions .join.active  {
+  background: -o-linear-gradient(335.24deg, #5F6BE3 0%, #73BDEB 100%);
+  background: linear-gradient(114.76deg, #5F6BE3 0%, #73BDEB 100%);
+}
+
+.actions .leaderboard.active  {
+  background: -o-linear-gradient(154.86deg, #FFE35A 0%, #FFB064 98.4%);
+  background: linear-gradient(295.14deg, #FFE35A 0%, #FFB064 98.4%);
+}
+
+.actions .shop.active  {
+  background: -o-linear-gradient(155.24deg, #F387BB 0%, #A26FED 100%);
+  background: linear-gradient(294.76deg, #F387BB 0%, #A26FED 100%);
 }

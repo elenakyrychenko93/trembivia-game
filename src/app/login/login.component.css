@@ -16,11 +16,17 @@
   text-align: center;
   padding: 20px;
   background: #E0E0E0;
-  height: 80vh;
+  height: 75vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
   display: flex;
-  flex-direction: column;
+  /*flex-direction: column;*/
+  -webkit-box-align: center;
+  -ms-flex-align: center;
   align-items: center;
-  /*justify-content: center;*/
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
 }
 .logoT {
   margin: 70px 0;
@@ -65,3 +71,78 @@ button:hover {
   background: #F8B003;
   color: #000000;
 }
+
+.phone {
+  width: 400px;
+  position: relative;
+}
+
+.phone svg {
+  position: absolute;
+  left: -40px;
+  top: -300px;
+}
+
+.login-footer {
+  background: white;
+  justify-content: space-between;
+  height: 25vh;
+}
+
+.login-footer>div {
+  width: 50%;
+}
+
+.adv-buttons {
+  /*float: right;*/
+  margin-top: 25px;
+}
+
+.adv-buttons p {
+  font-family: SF Pro Text;
+  font-weight: bold;
+  font-size: 16px;
+  letter-spacing: 1%;
+  color: black;
+}
+
+.adv-buttons button {
+  width: 170px;
+  text-align: center;
+  background: transparent;
+  border: 2px solid gray;
+  border-radius: 10px;
+  padding: 10px 0;
+  margin-right: 20px;
+  margin-top: 0;
+  -webkit-transition: .3s;
+  -o-transition: .3s;
+  transition: .3s;
+}
+
+.adv-buttons button:hover {
+  background: #F8B003;
+  color: #000000;
+}
+
+.adv-buttons button:hover svg {
+  -webkit-filter: brightness(0%) contrast(100%);
+  filter: brightness(0%) contrast(100%);
+}
+
+.adv-buttons button svg {
+  vertical-align: middle;
+}
+
+.google-button svg:first-child {
+  margin-right: 10px;
+}
+
+.google-button svg:last-child {
+  margin-top: 3px;
+}
+
+.apple-button svg {
+  margin-bottom: 4px;
+}
+

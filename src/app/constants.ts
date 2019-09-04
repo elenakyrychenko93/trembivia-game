@@ -51,7 +51,7 @@ export const RESULTS: Results[] = [
     name: 'Hulk',
     gamePoints: 2700,
     prize: 1000,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/hulk.jpg'
   },
   {
     name: 'Bug-Man',
@@ -63,43 +63,43 @@ export const RESULTS: Results[] = [
     name: 'Metal Man',
     gamePoints: 3700,
     prize: 800,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/iron-man.jpg'
   },
   {
     name: 'Captain la’America',
     gamePoints: 3900,
     prize: 700,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/captain-america.jpg'
   },
   {
     name: 'Jin Greye',
     gamePoints: 4200,
     prize: 600,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/daredevil.jpg'
   },
   {
     name: 'Deadriver',
     gamePoints: 4300,
     prize: 600,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/deadpool.jpg'
   },
   {
     name: 'Silver Swimmer',
     gamePoints: 4500,
     prize: 600,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/silver.jpg'
   },
   {
     name: 'Queen’s Gambit',
     gamePoints: 4700,
     prize: 500,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/gambit.jpg'
   },
   {
     name: 'Cyclopsis',
     gamePoints: 4700,
     prize: 500,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/storm.jpg'
   },
   {
     name: 'Sir. Fantasticus',
@@ -111,55 +111,55 @@ export const RESULTS: Results[] = [
     name: 'Nightbrawler',
     gamePoints: 5200,
     prize: 400,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/night.jpg'
   },
   {
     name: 'Nightbrawler',
     gamePoints: 5400,
     prize: 300,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/night.jpg'
   },
   {
     name: 'Nick Fursona',
     gamePoints: 5500,
     prize: 200,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/nick.jpg'
   },
   {
     name: 'Torch',
     gamePoints: 5700,
     prize: 200,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/thor.jpg'
   },
   {
     name: 'Icebaby',
     gamePoints: 6100,
     prize: 200,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/iceman.jpg'
   },
   {
     name: 'Professor Y',
     gamePoints: 6300,
     prize: 100,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/prof-x.jpg'
   },
   {
     name: 'Doctor Weird',
     gamePoints: 6600,
     prize: 100,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/doctor-strange.jpg'
   },
   {
     name: 'Skarlet Bitanga',
     gamePoints: 7100,
     prize: 100,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/black-widow.jpg'
   },
   {
     name: 'Kitty Kat',
     gamePoints: 7200,
     prize: 100,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/black-cat.jpg'
   },
   {
     name: 'HUMAN',
@@ -172,7 +172,7 @@ export const LEADERS: Leader[] = [
   {
     name: 'Hulk',
     prize: 1000,
-    icon: '../../assets/img/spider-man.jpg'
+    icon: '../../assets/img/hulk.jpg'
   },
   {
     name: 'Iron Man',
@@ -221,11 +221,14 @@ export const LEADERS: Leader[] = [
   },
 
 ];
-export const BEFOREROUND = ['Hype hype hype',
+export const COUNTROUND = ['Hype hype hype',
   'Just in time',
   'let’s go Boooiizzzzz',
   'This one is mine today im feeling it',
-  'What’s up everyone',
+  'What’s up everyone'
+];
+
+export const BEFOREROUND = [
   'Look who joined',
   'Human lol',
   'Up in arms guys',

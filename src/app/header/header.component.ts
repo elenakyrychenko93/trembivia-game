@@ -1,5 +1,6 @@
 import {Component, Input, OnInit} from '@angular/core';
 import {GameService} from '../game.service';
+import {Router} from '@angular/router';
 
 @Component({
   selector: 'app-header',
@@ -14,7 +15,8 @@ export class HeaderComponent implements OnInit {
   sectorBoost: boolean = false;
   distanceBoost: boolean = false;
 
-  constructor(private gameService: GameService) {
+  constructor(private gameService: GameService,
+              private router: Router) {
     this.gameService.getIsHostTalking().subscribe(value => {
       this.isHostTalking = value;
     });
@@ -39,6 +41,10 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+  }
+
+  redirectToMain() {
+    this.router.navigate(['/main']);
   }
 
 }

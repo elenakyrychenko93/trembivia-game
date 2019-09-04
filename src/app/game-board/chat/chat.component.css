@@ -2,10 +2,10 @@
 
 .detailBox {
   width:100%;
-  border:1px solid #bbb;
+  /*border:1px solid #bbb;*/
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
-  margin-bottom: 75px;
+  /*margin-bottom: 75px;*/
 }
 .titleBox {
   background-color:#fdfdfd;
@@ -36,7 +36,7 @@
 .commentList {
   padding:0;
   list-style:none;
-  height:150px;
+  height: calc(100vh - 150px);
   overflow:auto;
 }
 .commentList li {
@@ -75,4 +75,21 @@
 .actionBox {
   border-top:1px dotted #bbb;
   padding:10px;
+}
+
+input {
+  background-color: #FAFAFA;
+  border-top-left-radius: 10px;
+  border-bottom-left-radius: 10px;
+  padding: 20px;
+}
+
+button {
+  background: #2F80ED;
+  /*border-radius: 12px;*/
+  text-transform: uppercase;
+  color: white;
+  border-top-right-radius: 10px;
+  border-bottom-right-radius: 10px;
+  padding: 9px
 }
