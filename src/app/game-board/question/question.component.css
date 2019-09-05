@@ -1,0 +1,14 @@
+.question h3 {
+  font-family: SF Pro Display;
+  font-size: 42px;
+  line-height: 50px;
+  color: white;
+  font-weight: bold;
+}
+
+.question p {
+  font-family: SF Pro Text;
+  font-size: 16px;
+  color: white;
+  margin: 5px 0;
+}

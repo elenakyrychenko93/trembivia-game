@@ -50,11 +50,15 @@ div.container::before, div.container::after {
 }
 
 div.container {
-  max-width: 100%;
+  width: 100%;
+  max-width: 1800px;
   margin: auto;
+  padding: 0;
 }
 
 div.trembivia-container {
+  max-width: 1800px;
+  margin: auto;
   padding: 20px;
 }
 

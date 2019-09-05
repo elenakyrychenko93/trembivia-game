@@ -7,6 +7,9 @@
   <div class="actionBox">
     <ul class="commentList">
       <li *ngFor="let comment of comments">
+        <div class="commenterImage">
+          <img src={{comment.photo}} alt="photo">
+        </div>
         <div class="commenterName">
           {{comment.name}}:
         </div>
@@ -20,7 +23,7 @@
         <input class="form-control" [formControl]="comment" type="text" placeholder="Text message" (keydown)="onEnter($event)" />
       </div>
       <div class="form-group">
-        <button class="btn btn-default" type="button" (click)="addComment($event)" [disabled]="round == undefined">Send</button>
+        <button class="btn btn-default" type="button" (click)="addComment($event)" [disabled]="round == undefined || isHostTalking">Send</button>
       </div>
     </form>
   </div>

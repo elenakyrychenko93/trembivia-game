@@ -1,3 +1,20 @@
+.end-game {
+  height: 100%;
+  padding: 10px;
+  overflow-y: scroll;
+  max-width: 550px;
+  margin: 50px auto 0;
+}
+
+.user {
+  position: relative;
+  width: 120px;
+}
+
+::-webkit-scrollbar {
+  display: none;
+}
+
 h2 {
   color: #F8B003;
 }
@@ -62,7 +79,75 @@ ul li .avatar img {
 }
 
 .name {
+  position: absolute;
+  bottom: 20px;
+  width: 100%;
+  color: #2F80ED;
+  padding: 5px 15px;
+  background: white;
+  border-radius: 10px;
   margin: 5px;
   font-weight: bold;
-  font-size: 20px;
+  font-family: SF Pro Display;
+  font-size: 14px;
+  line-height: 17px;
+}
+
+.points {
+  font-family: SF Pro Display;
+  font-weight: bold;
+  font-size: 16px;
+  line-height: 19px;
+  margin-top: 20px;
+}
+
+.best {
+  color: #F2994A;
+  position: relative;
+}
+
+.circle.best {
+  background: white;
+  color: #F2994A;
+}
+
+.circle.best:after {
+  content: "";
+  display: block;
+  height: 35px;
+  width: 35px;
+  position: absolute;
+  border: 5px solid #F2994A;
+  border-radius: 50%;
+  -webkit-transform: translate(-2px, -28px);
+  -ms-transform: translate(-5px, -28px);
+  transform: translate(-5px, -28px);
+}
+
+.circle {
+  position: absolute;
+  top: -5px;
+  right: 10px;
+  background: #4F4F4F;
+  color: white;
+  font-size: 16px;
+  font-family: Baloo;
+  text-align: center;
+  width: 35px;
+  height: 34px;
+  border-radius: 50%;
+  padding: 5px;
+}
+
+.circle:after {
+  content: "";
+  display: block;
+  height: 30px;
+  width: 30px;
+  position: absolute;
+  border: 2px solid white;
+  border-radius: 50%;
+  -webkit-transform: translate(-2px, -25px);
+  -ms-transform: translate(-2px, -25px);
+  transform: translate(-2px, -25px);
 }

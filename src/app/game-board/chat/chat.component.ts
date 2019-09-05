@@ -1,6 +1,6 @@
 import {Component, ElementRef, Input, OnChanges, OnInit} from '@angular/core';
 import {FormControl} from '@angular/forms';
-import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5, COUNTROUND} from '../../constants';
+import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5, COUNTROUND, RESULTS} from '../../constants';
 
 @Component({
   selector: 'app-chat',
@@ -11,10 +11,11 @@ import {BOTS, BEFOREROUND, ROUND1, ROUND2, ROUND3, ROUND4, ROUND5, COUNTROUND} f
 export class ChatComponent implements OnInit, OnChanges {
   @Input() isChatActive: string;
   @Input() round: number;
+  @Input() isHostTalking: boolean;
 
   comment = new FormControl('');
   comments = [];
-  bots = BOTS;
+  bots = RESULTS;
   countRound = COUNTROUND;
   beforeRound = BEFOREROUND;
   round1 = ROUND1;
@@ -31,12 +32,13 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   ngOnInit() {
-    this.defineRound(this.round);
+    // this.defineRound(this.round);
   }
 
   defineRound(round) {
+    console.log('defineRound', round);
     switch (round) {
-      case -1:
+      case 'countdown':
         this.startChatting(this.countRound);
         break;
       case 0:
@@ -69,7 +71,8 @@ export class ChatComponent implements OnInit, OnChanges {
       setTimeout(() => {
         this.comments.push(
           {
-            name: this.bots[i],
+            name: this.bots[i].name,
+            photo: this.bots[i].icon,
             text: roundPhrases[i],
             date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
           });
@@ -85,6 +88,7 @@ export class ChatComponent implements OnInit, OnChanges {
     this.comments.push(
       {
         name: 'HUMAN',
+        photo: '../../assets/img/avatar.png',
         text: this.comment.value,
         date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
       });

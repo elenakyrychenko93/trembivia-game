@@ -1,15 +1,19 @@
 .game-board {
   width: 50%;
-  max-height: 100%;
+  /*max-height: 100%;*/
+  max-height: calc(100vh - 70px);
+  overflow: hidden;
 }
 
 .pre-game {
   height: 100%;
   width: 100%;
 }
-
+.host-block {
+  width: 100%;
+}
 .host-block.small {
-  width: 315px;
+  width: 35%;
 }
 
 .host-block.big {
@@ -17,36 +21,68 @@
   height: 100%;
 }
 
-.board-info {
-  /*height: 100%;*/
+.board-info.small {
+  height: 280px;
+}
+
+.board-info.big {
+  height: 100%;
 }
 
 .board-info > div {
-  display: inline-block;
+  /*display: inline-block;*/
   /*height: 100%;*/
 }
 
 .question-block {
-  width: 700px;
+  width: 65%;
   vertical-align: top;
   text-align: center;
   position: relative;
   min-height: 155px;
-  margin: 20px 0;
-}
-
-.timer {
-  position: absolute;
-  bottom: 0;
-  right: 10px;
-  -webkit-box-sizing: border-box;
+  background: #145BBA;
+  color: white;
+  padding: 20px;
   box-sizing: border-box;
 }
 
-.points {
-  position: absolute;
-  bottom: 0;
-  left: 10px;
+.view {
+  justify-content: space-between;
+  font-family: SF Pro Text;
+  font-size: 16px;
+  font-weight: bold;
+  line-height: 19px;
+  align-items: center;
+  text-align: right;
+  color: white;
+}
+
+.viewers {
+  align-items: center;
+  justify-content: center;
+}
+
+.viewers p {
+  margin: 0;
+}
+
+.timer {
+  /*position: absolute;*/
+  /*bottom: 0;*/
+  /*right: 10px;*/
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+
+  font-family: Baloo;
+  font-size: 54px;
+  line-height: 40px;
+  color: #6FCF97;
+  font-weight: bold;
+  margin: 25px 0;
+}
+
+.points, .place {
+  margin-left: 20px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
 }
@@ -56,8 +92,11 @@
 }
 
 .end-game {
-  background: #0b0a0ed4;
+  /*background: #0b0a0ed4;*/
   border-top: 1px solid white;
+  background: url("./../../assets/img/final.svg");
+  background-size: cover;
+  height: 100%;
 }
 
 .map.inactive {
@@ -65,10 +104,11 @@
 }
 
 #map {
-  height: 300px;
-  width: 50%;
+  height: calc(100vh - 350px);
+  width: 100%;
 }
 
 .chat {
+  height: calc(100vh - 70px);
   width: 50%;
 }

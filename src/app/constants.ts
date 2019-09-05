@@ -18,11 +18,11 @@ const AUSTRALIA = [{lat: 0.0, lng: 0.0}, {lat: 0.0, lng: 180.0}, {lat: -85.0, ln
 export const MAPRECTANGLES = {NORTHAMERICA: NORTHAMERICA, SOUTHAMERICA: SOUTHAMERICA, EURASIA: EURASIA, AUSTRALIA: AUSTRALIA};
 
 export const QUESTIONS = [
-  'round 1 question?',
-  'round 2 question?',
-  'round 3 question?',
-  'round 4 question?',
-  'round 5 question?'
+  'Questions Title 1?',
+  'Questions Title 2?',
+  'Questions Title 3?',
+  'Questions Title 4?',
+  'Questions Title 5?'
 ];
 
 export const BOTS = ['Walorine',
@@ -242,7 +242,8 @@ export const BEFOREROUND = [
   'Ahahah',
   'Host is hot',
 ];
-export const ROUND1 = ['Easy question',
+export const ROUND1 = [
+  'Easy question',
   'Eeezzzyyy',
   'Still in',
   'Next one',
@@ -273,7 +274,8 @@ export const ROUND1 = ['Easy question',
   // 'Im bitter af',
   // 'Good luck everyone'
 ];
-export const ROUND2 = ['Have no clue',
+export const ROUND2 = [
+  'Have no clue',
   'Hope everyone else lose',
   'Got it on point',
   'Missed this one',
@@ -283,7 +285,8 @@ export const ROUND2 = ['Have no clue',
   'Looool',
   'Anyone lags?',
   'you'];
-export const ROUND3 = ['McDonalds wi-fi sucks man))',
+export const ROUND3 = [
+  'McDonalds wi-fi sucks man))',
   'Loool',
   'Aahah',
   'ahahah^^',
@@ -295,7 +298,8 @@ export const ROUND3 = ['McDonalds wi-fi sucks man))',
   'Sweet chrismas',
   'Meingott',
   'Don’t worry it’s all be over soon];'];
-export const ROUND4 = ['How can i get paid?',
+export const ROUND4 = [
+  'How can i get paid?',
   'With food looool',
   'I’m crying',
   'You gonna be my food))',
@@ -311,7 +315,8 @@ export const ROUND4 = ['How can i get paid?',
   'Dont let HUMAN win',
   'Assassination proposal?',
   'Loool'];
-export const ROUND5 = ['A box of money is mineeeee',
+export const ROUND5 = [
+  'A box of money is mineeeee',
   'Good luck smarters',
   'LETS PUT ANOTHER SHRIMP ON A BARBIE',
   'Wtf',

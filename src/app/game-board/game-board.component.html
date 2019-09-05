@@ -1,48 +1,66 @@
 <app-header></app-header>
 
-<div class="flex">
+<div class="flex container">
   <div class="game-board">
-
-    <div *ngIf="!round && round != 0 && round !== 6" class="pre-game">
-      <app-pre-game></app-pre-game>
-    </div>
-
-    <div class="board-info" *ngIf="round >= 0 && round !== 6">
-      <div *ngIf="round || round == 0" class="host-block" [ngClass]="{'small': round > 0, 'big': isHostTalking}">
-        <app-host></app-host>
+    <div *ngIf="!round && round != 0 && round !== 6 || round === 'countdown'" class="pre-game">
+        <app-pre-game></app-pre-game>
       </div>
-      <div *ngIf="round > 0 && !isHostTalking" class="question-block">
-        <app-question [question]="question"></app-question>
-        <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="points">
-          Your points: {{humanPoints}}
+
+      <div *ngIf="round >= 0 && round !== 6"
+           class="board-info flex"
+           [ngClass]="{'small': round > 0, 'big': isHostTalking || round === 0}">
+        <div *ngIf="round || round == 0" class="host-block" [ngClass]="{'small': round > 0, 'big': isHostTalking}">
+          <app-host></app-host>
         </div>
-        <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="timer">
-          Round ends in: {{time}}s
+        <div *ngIf="round > 0 && !isHostTalking" class="question-block">
+          <div class="view flex">
+
+            <div class="viewers flex">
+              <svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <path fill-rule="evenodd" clip-rule="evenodd" d="M5 2C5 0.89543 5.89543 0 7 0H17C18.1046 0 19 0.895431 19 2V22C19 23.1046 18.1046 24 17 24H7C5.89543 24 5 23.1046 5 22V2ZM7.00008 3C7.00008 2.44772 7.4478 2 8.00008 2H16.0001C16.5524 2 17.0001 2.44772 17.0001 3V20H7.00008V3ZM12 23C12.5523 23 13 22.5523 13 22C13 21.4477 12.5523 21 12 21C11.4477 21 11 21.4477 11 22C11 22.5523 11.4477 23 12 23Z" fill="white"/>
+              </svg>
+
+              <p>76.5K</p>
+            </div>
+
+            <div class="flex">
+              <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="points">
+                Points: {{humanPoints}}km
+              </div>
+              <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="place">
+                Place: 50k
+              </div>
+            </div>
+
+          </div>
+
+          <div *ngIf="round > 0 && round < 6 && !isHostTalking" class="timer">
+            {{time}} s
+          </div>
+          <app-question [question]="question"></app-question>
         </div>
       </div>
-    </div>
 
     <div class="map" [ngClass]="{'inactive': round === 6 || round === 0 || round == undefined || isHostTalking == true}">
-      <div class="trembivia-container">
+      <!--<div class="trembivia-container">-->
         <div id="map"></div>
-      </div>
+      <!--</div>-->
     </div>
 
-
-
+    <div *ngIf="round === 6" class="end-game">
+      <app-end-game [humanPoints]="humanPoints"></app-end-game>
+    </div>
   </div>
 
   <div class="chat">
-    <app-chat [round]="round"></app-chat>
+    <app-chat [round]="round" [isHostTalking]="isHostTalking"></app-chat>
   </div>
 
   <!--<div class="chat" [ngClass]="{'inactive': round === 6 || round == undefined}">-->
     <!--<app-chat [round]="round"></app-chat>-->
   <!--</div>-->
 
-  <div *ngIf="round === 6" class="end-game">
-    <app-end-game [humanPoints]="humanPoints"></app-end-game>
-  </div>
+
 </div>
 
 

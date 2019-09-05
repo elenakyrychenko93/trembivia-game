@@ -48,6 +48,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   }
 
   ngOnInit() {
+    this.round = 'countdown';
     this.startGame();
     this.initMap();
     this.answer = {lat: 37.786617, lon: -122.404654};
@@ -61,12 +62,14 @@ export class GameBoardComponent implements OnInit, OnDestroy {
   startGame() {
     setTimeout(() => {
       this.round = this.rounds[0];
+      console.log('startGame 0', this.round);
       this.roundsTimeout = setTimeout(() => this.startRounds(), 5000);
     }, 5000);
   }
 
   startRounds() {
     if (this.round < 5) {
+      console.log('startRounds', this.round);
       this.map.setView([0, 0], 3);
       this.startTimer(20);
       this.isRoundRun = true;

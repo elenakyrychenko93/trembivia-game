@@ -21,6 +21,11 @@ a {
   padding: 15px 35px;
   -webkit-box-sizing: border-box;
   box-sizing: border-box;
+  width: 100%;
+}
+
+.container > div {
+  width: 370px;
 }
 
 .avatar * {
@@ -43,7 +48,11 @@ a {
   align-items: center;
 }
 
-.boosts > button {
+.boosts > div {
+  width: 170px;
+}
+
+.boosts button {
   border: 2px solid #2F80ED;
   border-radius: 50%;
   width: 40px;
@@ -60,8 +69,8 @@ a {
   transition: 0.3s;
   outline: none;
   /*box-shadow: 1px 1px 44px 8px #d5960f;*/
-  -webkit-box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
-  box-shadow: 0 0 0 rgba(204, 169, 44, 0.4);
+  -webkit-box-shadow: 0 0 0 rgba(47, 128, 247, 0.4);
+  box-shadow: 0 0 0 rgba(47, 128, 247, 0.4);
   -webkit-animation: pulse 2s infinite;
   animation: pulse 2s infinite;
 }
@@ -97,31 +106,31 @@ a {
   /*background: #2F80ED;*/
 }
 
-.boosts > button:hover {
+.boosts button:hover {
   background: #2F80ED;
   color: white;
 }
 
-.boosts > button:hover svg path{
+.boosts button:hover svg path{
   fill: white;
 }
 
 @-webkit-keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(47, 128, 247, 0.9);
   }
   70% {
-    -webkit-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.1);
+    -webkit-box-shadow: 0 0 0 20px rgba(47, 128, 247, 0.1);
   }
   100% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0);
+    -webkit-box-shadow: 0 0 0 0 rgba(47, 128, 247, 0);
   }
 }
 
 @keyframes pulse {
   0% {
-    -webkit-box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
-    box-shadow: 0 0 0 0 rgba(204, 169, 44, 0.9);
+    -webkit-box-shadow: 0 0 0 0 rgba(47, 328, 247, 0.9);
+    box-shadow: 0 0 0 0 rgba(47, 128, 257, 0.9);
   }
   70% {
     -webkit-box-shadow: 0 0 0 20px rgba(204, 169, 44, 0.1);
@@ -133,7 +142,7 @@ a {
   }
 }
 
-.boosts > button:disabled {
+.boosts button:disabled {
   -webkit-box-shadow: none;
   box-shadow: none;
   -webkit-animation: none;
@@ -176,16 +185,16 @@ a {
   /*color: black;*/
 /*}*/
 
-.boosts > button:disabled:hover {
+.boosts button:disabled:hover {
   background: transparent;
   color: #2F80ED;
 }
 
-.boosts > button:disabled:hover svg path{
+.boosts button:disabled:hover svg path{
   fill: #2F80ED;
 }
 
-.boosts > button:hover .tooltiptext {
+.boosts button:hover .tooltiptext {
   visibility: visible;
   opacity: 1;
 }
