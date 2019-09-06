@@ -36,12 +36,12 @@
 .commentList {
   padding:0;
   list-style:none;
-  height: calc(100vh - 140px);
+  height: calc(100vh - 145px);
   overflow:auto;
 }
 .commentList li {
   margin:0;
-  margin-top:10px;
+  margin-top:11px;
 }
 .commentList li > div {
   /*display:table-cell;*/
@@ -64,10 +64,18 @@
   float:left;
   font-weight: bold;
   width: 150px;
-  text-transform: uppercase;
+
+  font-family: SF Pro Text;
+  font-size: 16px;
+  line-height: 19px;
+  opacity: 0.7;
 }
 .commentText p {
   margin:0;
+  font-family: SF Pro Text;
+  font-size: 16px;
+  line-height: 19px;
+  color: #333333;
 }
 .sub-text {
   color:#aaa;

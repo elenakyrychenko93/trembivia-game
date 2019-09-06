@@ -36,7 +36,6 @@ export class ChatComponent implements OnInit, OnChanges {
   }
 
   defineRound(round) {
-    console.log('defineRound', round);
     switch (round) {
       case 'countdown':
         this.startChatting(this.countRound);
@@ -93,6 +92,7 @@ export class ChatComponent implements OnInit, OnChanges {
         date: new Date().toLocaleString('en-GB', {timeZone: 'UTC'})
       });
     event.target.value = '';
+    setTimeout(() => this._elementRef.nativeElement.querySelector('ul').lastChild.scrollIntoView({block: "center", behavior: "smooth"}), 10);
   }
 
   onEnter(event) {

@@ -1,5 +1,55 @@
-/* You can add global styles to this file, and also import other style files */
 @import "https://unpkg.com/leaflet@1.5.1/dist/leaflet.css";
+
+@font-face{
+
+  font-family: 'SF Pro Text';
+
+  src: url('./assets/fonts/SF-Pro-Text-Regular.otf');
+
+  src: url('./assets/fonts/SF-Pro-Text-Regular.otf?iefix') format('otf'),
+
+  url('./assets/fonts/SFProText-Regular.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+}
+
+@font-face{
+
+  font-family: 'SF Pro Display';
+
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf');
+
+  src: url('./assets/fonts/SF-Pro-Display-Regular.otf?iefix') format('otf'),
+
+  url('./assets/fonts/SFProDisplay-Regular.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+}
+
+@font-face{
+
+  font-family: 'SF UI Display';
+
+  src: url('./assets/fonts/SFUIDisplay-Regular.eot');
+
+  src: url('./assets/fonts/SFUIDisplay-Regular.eot?iefix') format('eot'),
+
+  url('./assets/fonts/SFUIDisplay-Regular.woff') format('woff'),
+
+  url('./assets/fonts/SFUIDisplay-Regular.ttf') format('truetype');
+
+  font-weight: normal;
+
+  font-style: normal;
+
+}
+
 
 * {
   -webkit-box-sizing: border-box;
@@ -17,6 +67,10 @@ h2 {
   font-size: 25px;
   font-weight: 400;
   margin: 10px 0;
+}
+
+p {
+  text-align: left;
 }
 
 .flex {

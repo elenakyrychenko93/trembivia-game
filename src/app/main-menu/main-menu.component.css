@@ -49,6 +49,7 @@ button {
   box-sizing: border-box;
   max-width: 620px;
   border-radius: 24px;
+  align-items: center;
 }
 
 #map { height: 380px; }

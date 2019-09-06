@@ -8,13 +8,31 @@
 .pre-game {
   height: 100%;
   width: 100%;
+  position: relative;
+}
+
+.view-info {
+  position: absolute;
+  color: white;
+  display: flex;
+}
+.view-info > div {
+  font-family: SF Pro Text;
+  margin: 25px 30px;
+  font-size: 16px;
+  line-height: 19px;
+  font-weight: bold;
 }
 .host-block {
   width: 100%;
+  position: relative;
 }
 .host-block.small {
   width: 35%;
 }
+
+.host-block.small .view-info {display: none}
+.host-block.big .view-info {display: flex}
 
 .host-block.big {
   width: 100%;
@@ -64,6 +82,7 @@
 
 .viewers p {
   margin: 0;
+  margin-left: 5px;
 }
 
 .timer {

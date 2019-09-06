@@ -1,5 +1,9 @@
-header {
+header.gray {
   background: #E0E0E0;
+}
+
+header.white {
+  background: white;
 }
 
 a {
@@ -25,7 +29,7 @@ a {
 }
 
 .container > div {
-  width: 370px;
+  /*width: 370px;*/
 }
 
 .avatar * {
@@ -34,6 +38,39 @@ a {
 
 .logo {
   cursor: pointer;
+}
+
+.nickname .flex{
+  font-family: SF Pro Text;
+  font-size: 16px;
+  /*color: #333333;*/
+  color: #4f4f4f;
+  font-weight: bold;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.nickname p {
+  margin-right: 15px;
+  margin-bottom: 0;
+
+  font-family: SF Pro Text;
+  font-size: 16px;
+  line-height: 22px;
+  letter-spacing: 0.01em;
+}
+
+.photo {
+  border: 2px solid #bdbdbd;
+  border-radius: 50%;
+  overflow: hidden;
+  width: 35px;
+  height: 35px;
+}
+
+.photo svg {
+  height: 100%;
+  width: 100%;
 }
 
 .boosts {
@@ -50,6 +87,8 @@ a {
 
 .boosts > div {
   width: 170px;
+  display: flex;
+  align-items: center;
 }
 
 .boosts button {
@@ -91,6 +130,9 @@ a {
 }
 
 .bonus-name {
+  font-family: SF Pro Display;
+  font-size: 16px;
+  letter-spacing: 0.01em;
   max-width: 150px;
   color: #2F80ED;
   font-weight: bold;

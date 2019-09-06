@@ -8,7 +8,7 @@ import {Router} from '@angular/router';
   styleUrls: ['./header.component.css']
 })
 export class HeaderComponent implements OnInit {
-  public name: string = 'HUMAN';
+  public name: string = 'Human';
   isHostTalking: any = false;
   round;
   isRoundRun: boolean = false;
@@ -41,6 +41,7 @@ export class HeaderComponent implements OnInit {
   }
 
   ngOnInit() {
+
   }
 
   redirectToMain() {

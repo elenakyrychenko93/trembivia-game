@@ -49,6 +49,7 @@ export class GameBoardComponent implements OnInit, OnDestroy {
 
   ngOnInit() {
     this.round = 'countdown';
+    this.gameService.setRound(this.round);
     this.startGame();
     this.initMap();
     this.answer = {lat: 37.786617, lon: -122.404654};
