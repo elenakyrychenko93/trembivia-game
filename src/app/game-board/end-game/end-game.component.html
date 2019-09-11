@@ -1,5 +1,24 @@
+<div class="view flex">
+
+  <div class="viewers flex">
+    <img src="../../assets/img/phone.svg">
+    <p>76.5K</p>
+  </div>
+
+  <div class="flex">
+    <div class="points">
+      Points: {{humanPoints}}km
+    </div>
+
+  <div class="place">
+      Place: 50k
+    </div>
+  </div>
+
+</div>
+
 <div class="end-game">
-    <ul>
+    <ul class="game-points">
       <li *ngFor="let user of users; let i = index">
         <div class="user">
           <div [ngClass]="i<3 ? 'best circle' : 'circle'">{{ i + 1 }}</div>
